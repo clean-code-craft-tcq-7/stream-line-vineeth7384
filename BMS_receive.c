@@ -3,7 +3,12 @@
 #include <stdlib.h>
 #include "BMS_receive.h"
 
-void readFromConsole()
+void readFromConsole(char* buff)
+{
+     fgets(buff, STRING_SIZE , stdin);
+}
+    
+void processSensorString(void (*receiver)(char*))
 {    
     char string [STRING_SIZE];
     char subString[STRING_SIZE];
@@ -14,7 +19,6 @@ void readFromConsole()
     
     for(int i = 0; i < SENSOR_VALUE_COUNT; i++)
     {
-        fgets(string, STRING_SIZE , stdin);
         strncpy(subString, string + START_OF_VOLTAGE_VALUE, FLOAT_SIZE);
         voltageArray[i] = strtod(subString,NULL);
         strncpy(subString, string + START_OF_CHARGE_VALUE, FLOAT_SIZE);
