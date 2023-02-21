@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "BMS_receive.h"
 
-int main(void)
+void readFromConsole()
 {
     char string [STRING_SIZE];
     char subString[STRING_SIZE];
@@ -38,8 +38,6 @@ int main(void)
     movingAverage(chargeArray,&averageValue);
     bmsParameter.chargeAverage = averageValue;
     printf("chargeAverage is %f\n",bmsParameter.chargeAverage);
-
-    return 0;
 }
 
 void minMaxSensorValues(float array[],float *minValue,float *maxValue)
