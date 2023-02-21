@@ -1,10 +1,10 @@
-#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
+/*#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 
 #include "test/catch.hpp"
 #include <string.h>
 #include "BMS_receive.h"
 
-/*void readFromTest(char* testStringBuffer)
+void readFromTest(char* testStringBuffer)
 {
 
 }
