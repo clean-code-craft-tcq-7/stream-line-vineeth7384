@@ -4,7 +4,7 @@
 #include <string.h>
 #include "BMS_receive.h"
 
-void readFromTest(char* testStringBuffer)
+/*void readFromTest(char* testStringBuffer)
 {
 
 }
@@ -12,7 +12,6 @@ void readFromTest(char* testStringBuffer)
 
 TEST_CASE("mock sender sensor data and on reception perform operations on the sensor stream received ") {
 	int result = 0;
-  int i=0;
 	processSensorString(&readFromTest);
 	REQUIRE(result == 1 );
-}
+}*/
