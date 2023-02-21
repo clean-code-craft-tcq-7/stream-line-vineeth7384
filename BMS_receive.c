@@ -14,7 +14,7 @@ int main(void)
     
     for(int i = 0; i < SENSOR_VALUE_COUNT; i++)
     {
-        gets (string);
+        fgets(string, STRING_SIZE , stdin);
         strncpy(subString, string + START_OF_VOLTAGE_VALUE, FLOAT_SIZE);
         voltageArray[i] = strtod(subString,NULL);
         strncpy(subString, string + START_OF_CHARGE_VALUE, FLOAT_SIZE);
