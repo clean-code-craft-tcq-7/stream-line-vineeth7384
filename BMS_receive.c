@@ -28,12 +28,12 @@ void processSensorString(void (*receiver)(char*))
 
     minMaxSensorValues(voltageArray,&minValue,&maxValue);
     bmsParameter.voltageMin = minValue;
-    bmsParameter.voltageMin = maxValue;
-    printf("voltagemin is %f and voltagemax is %f\n",bmsParameter.voltageMin,bmsParameter.voltageMin);
+    bmsParameter.voltageMax = maxValue;
+    printf("voltagemin is %f and voltagemax is %f\n",bmsParameter.voltageMin,bmsParameter.voltageMax);
 
     minMaxSensorValues(chargeArray,&minValue,&maxValue);
     bmsParameter.chargeMin = minValue;
-    bmsParameter.chargeMax = minValue;
+    bmsParameter.chargeMax = maxValue;
     printf("currentmin is %f and currentmax is %f\n",bmsParameter.chargeMin,bmsParameter.chargeMax);
 
     movingAverage(voltageArray,&averageValue);
