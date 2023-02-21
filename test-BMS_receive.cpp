@@ -16,11 +16,11 @@ void readFromTest(char* testStringBuffer)
 	testCurrent = testCurrent +((float) rand()/RAND_MAX);
 	
 	sprintf(testStringBuffer,"voltage = %.2f,current = %.2f",testVoltage,testCurrent);
-	printf("----------sensor reception mocked data for test----------\n");
         printf("%s\n",testStringBuffer);
 }
 
 
 TEST_CASE("mock sender sensor data and on reception perform operations on the sensor stream received ") {
+	printf("----------sensor reception mocked data for test----------\n");
 	processSensorString(&readFromTest);
 }
