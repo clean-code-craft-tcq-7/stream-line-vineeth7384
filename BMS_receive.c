@@ -6,7 +6,7 @@
 int main(void)
 {
     char string [STRING_SIZE];
-    char substring[STRING_SIZE];
+    char subString[STRING_SIZE];
     float voltageArray[SENSOR_VALUE_COUNT];
     float chargeArray[SENSOR_VALUE_COUNT];
     float minValue,maxValue,averageValue;
@@ -42,7 +42,7 @@ void minMaxSensorValues(float array[],float *minValue,float *maxValue)
 {
     int i, size;
 
-    size = strlen(array);
+    size = SENSOR_VALUE_COUNT;
 
     /* Assume first element as maximum and minimum */
     *minValue = array[0];
@@ -69,7 +69,6 @@ void movingAverage(float array[],float *avgValue)
   // the size of this array represents how many numbers will be used to calculate the average
   float arrNumbers[5] = {0};
   int pos = 0;
-  float newAvg = 0;
   long sum = 0;
   int len = 5;
 
