@@ -3,9 +3,9 @@
 #include <stdlib.h>
 #include "BMS_receive.h"
 
-void readFromConsole(char* buff)
+void readFromConsole(char* stringBuffer)
 {
-     fgets(buff, STRING_SIZE , stdin);
+     fgets(stringBuffer, STRING_SIZE , stdin);
 }
     
 void processSensorString(void (*receiver)(char*))
