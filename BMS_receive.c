@@ -24,16 +24,20 @@ int main(void)
     minMaxSensorValues(voltageArray,&minValue,&maxValue);
     bmsParameter.voltageMin = minValue;
     bmsParameter.voltageMin = maxValue;
+    printf("voltagemin is %f and voltagemax is %f\n",bmsParameter.voltageMin,bmsParameter.voltageMin);
 
     minMaxSensorValues(chargeArray,&minValue,&maxValue);
     bmsParameter.chargeMin = minValue;
     bmsParameter.chargeMax = minValue;
+    printf("currentmin is %f and currentmax is %f\n",bmsParameter.chargeMin,bmsParameter.chargeMax);
 
     movingAverage(voltageArray,&averageValue);
     bmsParameter.voltageAverage = averageValue;
+    printf("voltageAverage is %f\n",bmsParameter.voltageAverage);
 
     movingAverage(chargeArray,&averageValue);
     bmsParameter.chargeAverage = averageValue;
+    printf("chargeAverage is %f\n",bmsParameter.chargeAverage);
 
     return 0;
 }
