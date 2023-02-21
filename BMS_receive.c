@@ -4,7 +4,7 @@
 #include "BMS_receive.h"
 
 
-void readFromConsole(char *string[STRING_SIZE])
+void readFromConsole(char *string)
 {
     fgets(string, STRING_SIZE , stdin);      
 }
