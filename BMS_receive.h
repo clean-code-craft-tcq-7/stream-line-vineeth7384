@@ -15,7 +15,6 @@ typedef struct
     float chargeAverage;
 }bmsMinMaxAvg;
 
-void readFromConsole(char *string);
-void processTheString();
+void readFromConsole();
 void minMaxSensorValues(float array[],float *minValue,float *maxValue);
 void movingAverage(float array[],float *avgValue);
