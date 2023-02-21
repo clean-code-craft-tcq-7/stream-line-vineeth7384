@@ -8,8 +8,8 @@
 void readFromTest(char* testStringBuffer)
 {
 	int i = 0;
-	float testVoltage = 1;
-        float testCurrent = 1;
+	static float testVoltage = 1;
+        static float testCurrent = 1;
 	
 	srand(time(NULL));
 	
