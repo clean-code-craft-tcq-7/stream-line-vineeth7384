@@ -4,8 +4,7 @@
 #include "BMS_receive.h"
 
 void readFromConsole()
-{
-    
+{    
     char string [STRING_SIZE];
     char subString[STRING_SIZE];
     float voltageArray[SENSOR_VALUE_COUNT];
