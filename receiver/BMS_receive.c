@@ -17,7 +17,7 @@ void processSensorString(void (*receiver)(char*))
     float minValue,maxValue,averageValue;
     bmsMinMax bmsParameter;
     
-    for(int i = 0; i < SENSOR_VALUE_COUNT; i++)
+    for(int i = 0; i < 100; i++)
     {
         receiver(string);
         printf("%s\n",string);
