@@ -6,8 +6,8 @@
 
 void readFromTest(char* testStringBuffer)
 {
-    static float testVoltage = 1;
-    static float testCurrent = 1;
+    static float testVoltage = 5;
+    static float testCurrent = 5;
 	
     srand(time(NULL));
     testVoltage = testVoltage +((float) rand()/RAND_MAX);
