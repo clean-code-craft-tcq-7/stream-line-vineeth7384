@@ -15,7 +15,7 @@ void processSensorString(void (*receiver)(char*))
     float voltageArray[SENSOR_VALUE_COUNT];
     float chargeArray[SENSOR_VALUE_COUNT];
     float minValue,maxValue,averageValue;
-    bmsMinMaxAvg bmsParameter;
+    bmsMinMax bmsParameter;
     
     for(int i = 0; i < SENSOR_VALUE_COUNT; i++)
     {
@@ -29,17 +29,17 @@ void processSensorString(void (*receiver)(char*))
     minMaxSensorValues(voltageArray,&minValue,&maxValue);
     bmsParameter.voltageMin = minValue;
     bmsParameter.voltageMax = maxValue;
+    printf("----------voltage min and max----------\n");
     printf("voltagemin is %f and voltagemax is %f\n",bmsParameter.voltageMin,bmsParameter.voltageMax);
 
     minMaxSensorValues(chargeArray,&minValue,&maxValue);
     bmsParameter.chargeMin = minValue;
     bmsParameter.chargeMax = maxValue;
+    printf("----------current min and max----------\n");
     printf("currentmin is %f and currentmax is %f\n",bmsParameter.chargeMin,bmsParameter.chargeMax);
 
     movingAverage(voltageArray,&averageValue,VOLTAGE);
     movingAverage(chargeArray,&averageValue,CURRENT);
-    bmsParameter.chargeAverage = averageValue;
-    printf("chargeAverage is %f\n",bmsParameter.chargeAverage);
 }
 
 void minMaxSensorValues(float array[],float *minValue,float *maxValue)
@@ -82,9 +82,15 @@ void movingAverage(float array[],float *avgValue,int sensorType)
     arrNumbers[pos] = array[i];
     *avgValue = sum / len ; 
     if(sensorType == VOLTAGE)
+    {
+         printf("----------simple moving average for voltage----------\n");
          printf("voltage average is %f\n",*avgValue);
+    }     
     else
-         printf("current average is %f\n",*avgValue);          
+    {
+         printf("----------simple moving average for current----------\n");
+         printf("current average is %f\n",*avgValue);  
+    }   
     pos++;
     if (pos >= len)
     {
