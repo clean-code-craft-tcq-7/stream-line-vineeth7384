@@ -75,6 +75,11 @@ void movingAverage(float array[],float *avgValue,int sensorType)
   int pos = 0;
   long sum = 0;
   int len = 5;
+  
+  if(sensorType == VOLTAGE)
+        printf("----------simple moving average for voltage----------\n");
+  else
+        printf("----------simple moving average for current----------\n");
 
   for(int i = 0; i < SENSOR_VALUE_COUNT; i++)
   {
@@ -83,12 +88,10 @@ void movingAverage(float array[],float *avgValue,int sensorType)
     *avgValue = sum / len ; 
     if(sensorType == VOLTAGE)
     {
-         printf("----------simple moving average for voltage----------\n");
          printf("voltage average is %f\n",*avgValue);
     }     
     else
     {
-         printf("----------simple moving average for current----------\n");
          printf("current average is %f\n",*avgValue);  
     }   
     pos++;
