@@ -24,8 +24,11 @@ jobs:
     - name: run
       run: ./testchecker
       
-    - name: run receiver
-      run: ./receive
+    - name: run receiver test
+      run: ./receive -t
+      
+    - name: run receiver application
+      run: ./testchecker | ./receive -r
       
     - name: collect coverage
       run: gcovr --gcov-exclude=".*test.*" -r . --html --html-details -o coverage.html --print-summary
