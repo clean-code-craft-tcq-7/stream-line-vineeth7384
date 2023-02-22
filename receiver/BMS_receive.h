@@ -4,6 +4,8 @@
 #define START_OF_VOLTAGE_VALUE 10
 #define START_OF_CHARGE_VALUE 25
 #define FLOAT_SIZE 4
+#define VOLTAGE 1
+#define CURRENT 2
 
 typedef struct
 {
@@ -11,11 +13,9 @@ typedef struct
     float voltageMax;
     float chargeMin;
     float chargeMax;
-    float voltageAverage;
-    float chargeAverage;
-}bmsMinMaxAvg;
+}bmsMinMax;
 
 void readFromConsole(char* buff);
 void processSensorString(void (*receiver)(char*));
 void minMaxSensorValues(float array[],float *minValue,float *maxValue);
-void movingAverage(float array[],float *avgValue);
+void movingAverage(float array[],float *avgValue,int sensorType);
