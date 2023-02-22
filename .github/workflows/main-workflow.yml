@@ -19,7 +19,7 @@ jobs:
       run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker *.c*
       
     - name: build receiver
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o receive receiver/*.c*
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o receive receiver/*.c
       
     - name: run
       run: ./testchecker
