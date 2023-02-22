@@ -20,6 +20,7 @@ void processSensorString(void (*receiver)(char*))
     for(int i = 0; i < SENSOR_VALUE_COUNT; i++)
     {
         receiver(string);
+        printf("%s\n",string);
         strncpy(subString, string + START_OF_VOLTAGE_VALUE, FLOAT_SIZE);
         voltageArray[i] = strtod(subString,NULL);
         strncpy(subString, string + START_OF_CHARGE_VALUE, FLOAT_SIZE);
