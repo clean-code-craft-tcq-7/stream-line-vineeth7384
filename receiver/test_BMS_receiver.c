@@ -6,14 +6,13 @@
 
 void readFromTest(char* testStringBuffer)
 {
-	int i = 0;
-	static float testVoltage = 1;
+    static float testVoltage = 1;
     static float testCurrent = 1;
 	
-	srand(time(NULL));
-	testVoltage = testVoltage +((float) rand()/RAND_MAX);
-	testCurrent = testCurrent +((float) rand()/RAND_MAX);
-	
-	sprintf(testStringBuffer,"voltage = %.2f,current = %.2f",testVoltage,testCurrent);
+    srand(time(NULL));
+    testVoltage = testVoltage +((float) rand()/RAND_MAX);
+    testCurrent = testCurrent +((float) rand()/RAND_MAX);
+
+    sprintf(testStringBuffer,"voltage = %.2f,current = %.2f",testVoltage,testCurrent);
     printf("%s\n",testStringBuffer);
 }
