@@ -14,5 +14,4 @@ void readFromTest(char* testStringBuffer)
     testCurrent = testCurrent +((float) rand()/RAND_MAX);
 
     sprintf(testStringBuffer,"voltage = %.2f,current = %.2f",testVoltage,testCurrent);
-    printf("%s\n",testStringBuffer);
 }
